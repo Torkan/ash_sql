@@ -481,7 +481,7 @@ defmodule AshSql.Join do
         relationship
         | filter: query.filter,
           sort: query.sort
-      })
+      }, query.context, query.domain)
 
     Ash.Query.set_context(query, %{data_layer: %{has_parent_expr?: has_parent_expr?}})
   end
